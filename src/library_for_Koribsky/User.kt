@@ -12,3 +12,20 @@ abstract class User (
     abstract fun getMaximumBooks(): Int
     abstract fun getYourDays(): Int
 }
+
+class Student(name: String, userId: String, email: String) : User(name, userId, email){
+    override fun getMaximumBooks() = 3
+    override fun getYourDays() = 14
+}
+
+class Teacher(name: String, userId: String, email: String): User(name, userId, email){
+    override fun getMaximumBooks() = 10
+    override fun getYourDays() = 30
+
+}
+
+class Geast(name: String, userId: String, email: String): User(name, userId, email){
+    override fun getMaximumBooks() = 1
+    override fun getYourDays() = 7
+
+}
