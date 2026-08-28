@@ -4,13 +4,23 @@ abstract class User (
     val name: String,
     val userId: String,
     val email: String
-    )
+)
 {
     private val taken_books: MutableList<String> = mutableListOf()
     val show_taken_books: List<String> get() = taken_books
 
     abstract fun getMaximumBooks(): Int
     abstract fun getYourDays(): Int
+
+    fun canTake(): Boolean = taken_books.size < getMaximumBooks()
+
+    fun addTakenBook(isbn: String) {
+        taken_books.add(isbn)
+    }
+
+    fun removeTakenBook(isbn: String) {
+        taken_books.remove(isbn)
+    }
 }
 
 class Student(name: String, userId: String, email: String) : User(name, userId, email){
