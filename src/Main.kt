@@ -118,6 +118,8 @@ fun registerUserMenu() {
     print("Email: ")
     val email = readlnOrNull() ?: ""
 
+
+
     println("1. Student")
     println("2. Teacher")
     println("3. Guest")
